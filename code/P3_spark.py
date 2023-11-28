@@ -2,18 +2,28 @@ from pyspark import SparkConf, SparkContext
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import col
 
-conf = SparkConf().setAppName('StockSummary')
+conf = SparkConf().setAppName('CrimeSummary')
 sc = SparkContext(conf=conf)
 sc.setLogLevel('ERROR')
 spark = SparkSession(sc)
 
-stock_df = spark.read.option("header", "true").csv("GOOGLE.csv")
+# Reemplaza 'your_crime_data.csv' con la ruta real de tu archivo de datos de crímenes
+crime_df = spark.read.option("header", "true").csv("your_crime_data.csv")
 
-df = stock_df.withColumn("Year", col("Date").substr(1, 4).cast("int"))
+# Selecciona las columnas relevantes, en este caso, 'Year' y 'District'
+df = crime_df.select("Year", "District")
 
-df = df.select("Year", col("Close").cast("double"))
+# Cuenta la frecuencia de crímenes por distrito
+crime_counts_df = df.groupBy("District", "Year").count()
 
-average_price_df = df.groupBy("Year").agg({"Close": "avg"})
+# Encuentra el distrito más problemático por año
+most_problematic_district_df = crime_counts_df.groupBy("Year", "District").agg({"count": "max"})
 
-average_price_df.write.csv("exercise3.txt")
+# Encuentra el distrito más problemático globalmente
+most_problematic_district_global = most_problematic_district_df.groupBy("District").agg({"max(count)": "max"})
+
+# Escribe los resultados en un archivo CSV
+most_problematic_district_global.write.csv("most_problematic_district")
+
+
 
