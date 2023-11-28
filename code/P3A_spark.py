@@ -22,8 +22,10 @@ most_problematic_district_df = crime_counts_df.groupBy("Year", "District").agg({
 # Encuentra el distrito más problemático globalmente
 most_problematic_district_global = most_problematic_district_df.groupBy("Year", "District").agg({"max(count)": "max"})
 
+most_problematic_district_global_aux = most_problematic_district_global.orderBy("Year", "District")
+
 # Escribe los resultados en un archivo CSV
-most_problematic_district_global.write.csv("most_problematic_district")
+most_problematic_district_global_aux.write.csv("year_district_crimes")
 
 
 
