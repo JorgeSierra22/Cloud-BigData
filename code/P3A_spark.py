@@ -1,6 +1,6 @@
 from pyspark import SparkConf, SparkContext
 from pyspark.sql import SparkSession
-from pyspark.sql.functions import col
+from pyspark.sql.functions import col, max as spark_max
 
 conf = SparkConf().setAppName('CrimeSummary')
 sc = SparkContext(conf=conf)
@@ -17,13 +17,17 @@ df = crime_df.select("Year", "District")
 crime_counts_df = df.groupBy("District", "Year").count()
 
 # Encuentra el distrito más problemático por año
-most_problematic_district_df = crime_counts_df.groupBy("Year", "District").agg({"count": "max"})
+most_problematic_district_df = crime_counts_df.groupBy("Year").agg(
+    col("Year"),
+    col("District"),
+    spark_max("count").alias("MaxCrimesCount")
+)
 
-# Encuentra el distrito más problemático globalmente
-most_problematic_district_global = most_problematic_district_df.groupBy("Year", "District").agg({"max(count)": "max"})
+# Ordena el DataFrame por año
+most_problematic_district_df = most_problematic_district_df.orderBy("Year")
 
-# Escribe los resultados en un archivo CSV
-most_problematic_district_global.write.csv("most_problematic_district")
-
-
-
+# Escribe los resultados en archivos CSV separados por año
+for year_row in most_problematic_district_df.collect():
+    year = year_row["Year"]
+    year_district_df = most_problematic_district_df.filter(col("Year") == year)
+    year_district_df.write.csv(f"most_problematic_district_{year}")
