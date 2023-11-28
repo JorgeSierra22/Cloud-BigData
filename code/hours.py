@@ -1,6 +1,6 @@
 from pyspark import SparkConf, SparkContext
 from pyspark.sql import SparkSession
-from pyspark.sql.functions import col, hour, max as spark_max
+from pyspark.sql.functions import hour
 
 conf = SparkConf().setAppName('CrimeSummary')
 sc = SparkContext(conf=conf)
@@ -10,27 +10,17 @@ spark = SparkSession(sc)
 # Reemplaza 'your_crime_data.csv' con la ruta real de tu archivo de datos de crímenes
 crime_df = spark.read.option("header", "true").csv("Crimes_-_2001_to_Present.csv")
 
-# Selecciona las columnas relevantes, en este caso, 'Date' y 'District'
-df = crime_df.select("Date", "District")
+# Selecciona la columna 'Date'
+df = crime_df.select("Date")
 
 # Extrae la hora del día de la columna 'Date'
-df = df.withColumn("HourOfDay", hour(col("Date")))
+df = df.withColumn("HourOfDay", hour(df["Date"]))
 
-# Cuenta la frecuencia de crímenes por distrito y hora del día
-crime_counts_df = df.groupBy("District", "HourOfDay").count()
+# Cuenta la frecuencia de crímenes por hora del día
+crime_counts_df = df.groupBy("HourOfDay").count()
 
-# Encuentra el distrito más problemático por hora del día
-most_problematic_district_df = crime_counts_df.groupBy("HourOfDay").agg(
-    col("HourOfDay"),
-    col("District"),
-    spark_max("count").alias("MaxCrimesCount")
-)
+# Ordena el DataFrame por hora del día
+crime_counts_df = crime_counts_df.orderBy("HourOfDay")
 
-# Ordena el DataFrame por hora del día y distrito
-most_problematic_district_df = most_problematic_district_df.orderBy("HourOfDay", "District")
-
-# Escribe los resultados en archivos CSV separados por hora del día
-for hour_row in most_problematic_district_df.collect():
-    hour_of_day = hour_row["HourOfDay"]
-    hour_district_df = most_problematic_district_df.filter(col("HourOfDay") == hour_of_day)
-    hour_district_df.write.csv(f"most_problematic_district_hour_{hour_of_day}")
+# Escribe los resultados en un archivo CSV
+crime_counts_df.write.csv("crime_counts_by_hour")
