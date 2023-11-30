@@ -1,6 +1,6 @@
 from pyspark import SparkConf, SparkContext
 from pyspark.sql import SparkSession
-from pyspark.sql.functions import col, max as spark_max
+from pyspark.sql import functions as F
 
 conf = SparkConf().setAppName('CrimeSummary')
 sc = SparkContext(conf=conf)
@@ -21,8 +21,8 @@ crime_counts_df = df.groupBy("Primary Type", "Year_Group").count()
 
 # Encuentra el delito más repetido en cada rango de 5 años
 most_repeated_crime_df = crime_counts_df.groupBy("Year_Group").agg(
-    spark_max("count").alias("Max_Count"),
-    col("Primary Type").first().alias("Most_Repeated_Crime")
+    F.max("count").alias("Max_Count"),
+    F.first("Primary Type").alias("Most_Repeated_Crime")
 )
 
 # Escribe los resultados en un archivo CSV
