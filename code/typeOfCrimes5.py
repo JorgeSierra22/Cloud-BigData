@@ -26,4 +26,4 @@ most_repeated_crime_df = crime_counts_df.groupBy("Year_Group").agg(
 )
 
 # Escribe los resultados en un archivo CSV
-most_repeated_crime_df.write.csv("most_repeated_crime")
+most_repeated_crime_df.write.csv("most_repeated_crime_per_5_year")
