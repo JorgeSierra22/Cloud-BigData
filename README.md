@@ -25,4 +25,26 @@ Para llevar a cabo el estudio de los datos explicados anteriormente, es necesari
 Para nuestro trabajo, hemos decidido realizar script de Spark en el lenguaje de python. Todos los códigos se encuentran en la carpeta **code**: https://github.com/JorgeSierra22/Cloud-BigData/tree/main/code
 
 ### Cómo ejecutar los códigos
+Para poder ejecutar nuestros códigos en **local** se deben de realizar los siguientes pasos:
 
+**Instalar el entorno**:
+Primero nos debemos de asegurar que tenemos un sistema operativo que soporte Unix, ya sea el propio Linux, wsl en Windows, o  Mac OS. 
+
+Una vez nos encontremos en la terminal de dicho sistema operativo:
+1º Instalar java y pip: sudo apt install default-jre pip
+2º Instalar PySpark: pip install pyspark
+3º Actualizar la ruta: source ~/.profile
+
+Siguiendo estos pasos, conseguimos poder ejecutar Spark en modo local
+
+**Ejecutar nuestros Scripts**:
+1º Debemos de descargar el dataset. Para ello, nos vamos a la carpeta datasets y seguimos los pasos de información importante.
+2º Debemos descargar la carpeta code. En ella encontramos diferentes archivos de python. 
+3º Asegurándonos que tenemos el código y el dataset en la misma carpeta y además nosotros nos encontramos en dicha ruta, poniendo el siguiente comando en la terminal spark-submit example.py, se procesa el script deseado.
+4º Para ver los resultados se habrá creado una carpeta nueva en dicha ruta que se podrá visualizar poniendo el siguiente comando: more ouput_example/*. Sin embargo, todos estos resultados se encuentran visibles en la carpeta results
+
+### Explicación código
+-[hours.py](https://github.com/JorgeSierra22/Cloud-BigData/blob/main/code/hours.py) : A través de este programa realizamos una agrupación de los delitos cometidos por cada franja horaria durante todo el tiempo del estudio.
+-[listOfStreets.py](https://github.com/JorgeSierra22/Cloud-BigData/blob/main/code/listOfStreet.py) : Gracias a este programa podemos ver las calles que han sido atendidas por cada comisaría durante el periodo de tiempo del estudio.
+-[typeOfCrime.py](https://github.com/JorgeSierra22/Cloud-BigData/blob/main/code/typeOfCrime.py) : Con este código, vemos cuántos crímenes de cada tipo se han producido en los años del estudio.
+-[crimesEachYearOnDistrict.py](https://github.com/JorgeSierra22/Cloud-BigData/blob/main/code/crimesEachYearOnDistrict.py): Llevamos a cabo la cuenta del número de delitos que han sido atendidos por cada comisaría en cada año.
