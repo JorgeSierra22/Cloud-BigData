@@ -16,13 +16,13 @@ En cuanto al tamaño de los datos, estos ocupan un total de 1.74GB, lo que refle
 
 Este enfoque meticuloso en la identificación y selección de datos confiables y representativos sienta las bases para una investigación sólida y detallada sobre el índice de criminalidad en Chicago, permitiéndonos abordar de manera efectiva la detección de patrones y tendencias delictivas en la ciudad.
 
-En nuestro Github se pueden encontrar en la carpeta **datsets**: https://github.com/JorgeSierra22/Cloud-BigData/tree/main/datasets
+En nuestro Github se pueden encontrar en la carpeta [datsets](https://github.com/JorgeSierra22/Cloud-BigData/tree/main/datasets)
 
 ## Necesidad del Big Data
 Para llevar a cabo el estudio de los datos explicados anteriormente, es necesario emplear Big Data. Esto se debe a que los datos de crímenes en la ciudad de Chicago a lo largo de estos años, desde 2001 hasta la actualidad, representan  una gran cantidad de información de muy diverso tipo(Volumen y Variedad). Además, queremos llevar a cabo un análisis con el mayor rendimiento posible(Velocidad). También realizamos el proyecto con la idea de poder realizar este mismo análisis en otras ciudades(Escalabilidad). Por todo esto, reiteramos la importancia de emplear las técnicas de Big Data aprendidas en clase para poder realizar un análisis y una comprensión correcta.
 
 ## Código
-Para nuestro trabajo, hemos decidido realizar script de Spark en el lenguaje de python. Todos los códigos se encuentran en la carpeta **code**: https://github.com/JorgeSierra22/Cloud-BigData/tree/main/code
+Para nuestro trabajo, hemos decidido realizar script de Spark en el lenguaje de python. Todos los códigos se encuentran en la carpeta [code](https://github.com/JorgeSierra22/Cloud-BigData/tree/main/code)
 
 ### Cómo ejecutar los códigos
 Para poder ejecutar nuestros códigos en **local** se deben de realizar los siguientes pasos:
@@ -31,20 +31,42 @@ Para poder ejecutar nuestros códigos en **local** se deben de realizar los sigu
 Primero nos debemos de asegurar que tenemos un sistema operativo que soporte Unix, ya sea el propio Linux, wsl en Windows, o  Mac OS. 
 
 Una vez nos encontremos en la terminal de dicho sistema operativo:
-1º Instalar java y pip: sudo apt install default-jre pip
-2º Instalar PySpark: pip install pyspark
-3º Actualizar la ruta: source ~/.profile
+
+1º Instalar java y pip:
+```
+sudo apt install default-jre pip
+``` 
+2º Instalar PySpark:
+```
+pip install pyspark
+``` 
+3º Actualizar la ruta: 
+```
+source ~/.profile
+``` 
+
 
 Siguiendo estos pasos, conseguimos poder ejecutar Spark en modo local
 
+Para poder ejecutar nuestros códigos en el cloud tenemos que hacer lo siguiente:
+
+
+
 **Ejecutar nuestros Scripts**:
-1º Debemos de descargar el dataset. Para ello, nos vamos a la carpeta datasets y seguimos los pasos de información importante.
-2º Debemos descargar la carpeta code. En ella encontramos diferentes archivos de python. 
-3º Asegurándonos que tenemos el código y el dataset en la misma carpeta y además nosotros nos encontramos en dicha ruta, poniendo el siguiente comando en la terminal spark-submit example.py, se procesa el script deseado.
-4º Para ver los resultados se habrá creado una carpeta nueva en dicha ruta que se podrá visualizar poniendo el siguiente comando: more ouput_example/*. Sin embargo, todos estos resultados se encuentran visibles en la carpeta results
+
+1º Debemos de descargar el dataset. Para ello, nos vamos a la carpeta [datsets](https://github.com/JorgeSierra22/Cloud-BigData/tree/main/datasets) y seguimos los pasos de información importante.
+
+2º Debemos descargar la carpeta [code](https://github.com/JorgeSierra22/Cloud-BigData/tree/main/code). En ella encontramos diferentes archivos de python. 
+
+3º Asegurándonos que tenemos el código y el dataset en la misma carpeta y además nosotros nos encontramos en dicha ruta, poniendo el siguiente comando en la terminal ```spark-submit example.py```, se procesa el script deseado.
+
+4º Para ver los resultados se habrá creado una carpeta nueva en dicha ruta que se podrá visualizar poniendo el siguiente comando: ```more ouput_example/*```. Sin embargo, todos estos resultados se encuentran visibles en la carpeta results
 
 ### Explicación código
 -[hours.py](https://github.com/JorgeSierra22/Cloud-BigData/blob/main/code/hours.py) : A través de este programa realizamos una agrupación de los delitos cometidos por cada franja horaria durante todo el tiempo del estudio.
+
 -[listOfStreets.py](https://github.com/JorgeSierra22/Cloud-BigData/blob/main/code/listOfStreet.py) : Gracias a este programa podemos ver las calles que han sido atendidas por cada comisaría durante el periodo de tiempo del estudio.
+
 -[typeOfCrime.py](https://github.com/JorgeSierra22/Cloud-BigData/blob/main/code/typeOfCrime.py) : Con este código, vemos cuántos crímenes de cada tipo se han producido en los años del estudio.
--[crimesEachYearOnDistrict.py](https://github.com/JorgeSierra22/Cloud-BigData/blob/main/code/crimesEachYearOnDistrict.py): Llevamos a cabo la cuenta del número de delitos que han sido atendidos por cada comisaría en cada año.
+
+-[crimesEachYearOnDistrict.py](https://github.com/JorgeSierra22/Cloud-BigData/blob/main/code/crimesEachYearOnDistrict.py): Llevamos a cabo la cuenta del número de delitos que han sido atendidos por cada comisaría. en cada año.
