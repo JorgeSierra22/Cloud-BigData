@@ -1,6 +1,6 @@
 from pyspark import SparkConf, SparkContext
 from pyspark.sql import SparkSession
-from pyspark.sql.functions import col, count
+from pyspark.sql.functions import col, count ,dayofmonth , month
 
 # Configuración de Spark
 conf = SparkConf().setAppName('ChristmasCrimeCount')
