@@ -1,6 +1,7 @@
 from pyspark import SparkConf, SparkContext
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import col
+#Version beta de Crimes EachYearOndistricts no subir a la version final
 
 conf = SparkConf().setAppName('CrimeSummary')
 sc = SparkContext(conf=conf)
