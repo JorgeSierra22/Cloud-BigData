@@ -18,4 +18,4 @@ crime_df = crime_df.withColumn("Month", month("Date")).withColumn("Year", year("
 monthly_crime_count_df = crime_df.groupBy("Year", "Month").agg(count("ID").alias("MonthlyCrimeCount"))
 
 # Muestra los resultados
-monthly_crime_count_df.show()
+monthly_crime_count_df.write.csv("most_problematic_month_per_year")
