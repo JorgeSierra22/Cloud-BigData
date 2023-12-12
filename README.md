@@ -45,11 +45,7 @@ pip install pyspark
 source ~/.profile
 ``` 
 
-
 Siguiendo estos pasos, conseguimos poder ejecutar Spark en modo local
-
-Para poder ejecutar nuestros códigos en el cloud tenemos que hacer lo siguiente:
-
 
 
 **Ejecutar nuestros Scripts**:
@@ -69,4 +65,14 @@ Para poder ejecutar nuestros códigos en el cloud tenemos que hacer lo siguiente
 
 -[typeOfCrime.py](https://github.com/JorgeSierra22/Cloud-BigData/blob/main/code/typeOfCrime.py) : Con este código, vemos cuántos crímenes de cada tipo se han producido en los años del estudio.
 
--[crimesEachYearOnDistrict.py](https://github.com/JorgeSierra22/Cloud-BigData/blob/main/code/crimesEachYearOnDistrict.py): Llevamos a cabo la cuenta del número de delitos que han sido atendidos por cada comisaría. en cada año.
+-[crimesEachYearOnDistrict.py](https://github.com/JorgeSierra22/Cloud-BigData/blob/main/code/crimesEachYearOnDistrict.py): Llevamos a cabo la cuenta del número de delitos que han sido atendidos por cada comisaría en cada año.
+
+-[most_problematic_street_for_district.py](https://github.com/JorgeSierra22/Cloud-BigData/blob/main/code/most_problematic_street_for_district.py): Este código es complementario al script anterior y nos muestra la calle que más ha sido atendida por cada comisaría en todos los años del estudio.
+
+-[crimesWithArrest](https://github.com/JorgeSierra22/Cloud-BigData/blob/main/code/crimesWithArrest.py): Por medio de este script, podemos ver los crímenes en los cuales la policía de Chicago arrestó al delincuente, este código está relacionado con el script de [typeOfCrime.py](https://github.com/JorgeSierra22/Cloud-BigData/blob/main/code/typeOfCrime.py) que ya hemos explicado anteriormente.
+
+-[grep_streets](https://github.com/JorgeSierra22/Cloud-BigData/blob/main/code/grep_streets.py): Para finalizar, este script simula el comando grep para encontrar las calles en las que se cometieron delitos en algún momento dado un año y un tipo de crimen. Es importante recalcar que para este script se debe de ejecutar este comando ```spark-submit grep_streets.py THEFT 2023```.
+
+
+### Resultados
+Para visualizar los resultados que hemos obtenido podemos ir a la carpeta [results](https://github.com/JorgeSierra22/Cloud-BigData/tree/main/results) donde se encuentran los csv resultantes de ejecutar los códigos explicados anteriormente y, en especial, para saber las conclusiones a las que hemos llegado se puede consultar tanto nuesta [página web](https://github.com/JorgeSierra22/Cloud-BigData/tree/main/webPage) como el archivo de Jupyter notebook [results.ipybn](https://github.com/JorgeSierra22/Cloud-BigData/blob/main/results/results.ipynb) en el cual, a través de la manipulación de las librerías de python Pandas y MatPlotLib, se encuentran las gráficas usadas en la web.
