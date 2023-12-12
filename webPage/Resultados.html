@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/estilosResultados.css">
+    <link rel="shortcut icon" href="images/logo.png">
+    <title>CrimesOfChicago</title>
+</head>
+<body class="fondo">
+    <header class="container fondocabecera justify-content-center">  <!-- Aqui comienza el contenedor que contiene el logo y el texto de la cabecera  -->
+        <div class="row ">  <!--  Esta formado por 1 fila que contiene 1 columna de tamaño 2 para el logo y una de tamaño 8 para el texto  --> 
+            <div class="col-sm-2 ">
+                <img src="images/logo.png" alt="Icono Página no cargado" width="50" height="60" class="d-flex align-content-center justify-content-center">
+            </div>
+            <div class="col-sm-8 ">
+                <h1 class="textoCabecera d-flex align-items-center justify-content-center ">Crimes Of Chicago</h1>
+            </div>
+        </div>
+    </header>
+    <nav class="container justify-content-center"> <!-- Contenedor encargado de almacenar la barra de Herramientas -->
+        
+        <div class="row barraDeHerramientas"> <!-- formado por 1 fila que contiene los 4 botones de opciones, el buscador y el boton de Buscar -->
+            <div class="col-md-3  text-center bordecolumnaCabecera"><a href=./index.html  target="_self" class="btn btn-lg botoncabecera" ><h5>Descripcion del Proyecto</h5></a></div> 
+            <div class="col-md-3  text-center bordecolumnaCabecera"><a href=./Resultados.html  target="_self" class="btn btn-lg botoncabecera" ><h5>Resultados del Proyecto</h5></a></div> 
+            <div class="col-md-2  text-center bordecolumnaCabecera"><a href=https://es.wikipedia.org/wiki/Am%C3%A9rica  target="_self" class="btn btn-lg botoncabecera" ><h5>Aspectos tecnicos</h5></a></div> 
+            <div class="col-md-4  text-center bordecolumnaCabecera"><a href=https://es.wikipedia.org/wiki/%C3%81frica  target="_self" class="btn btn-lg botoncabecera" ><h5>Objetivos Aprendizaje y Mejoras</h5></a></div> 
+        </div>
+    </nav>
+
+
+   <section class="container justify-content-center "> <!-- Contenedor encargado de almacenar la seccion donde apareceran los destinos disponibles -->
+
+        <div class="row  "> <!-- formado por x filas que contienen grupos de 3 destinos los cuales se muestran usando el formato card ubicados dentro de columnas -->
+            <div class="col-md-8 pb-4 d-flex">
+                <div class="card" >
+                  <div class="card-header CabeceraCarta">
+                    <h5>Analisis de la delictividad en funcion de las horas</h5>
+                  </div>
+                    <div class="card-body">
+                      <p class="card-text"> Primero con respecto a los resultados obtenidos de cuales son las horas en las que se producen mayores crímenes, gracias a esta gráfica podemos ver que los crímenes se concentran en la franja horaria comprendida entre las 18-21 horas a pesar de no ser el pico en cuanto a número, el pico se produce a las 12 de la noche. Esto nos hace ver que la mayoría de los crímenes en Chicago se producen en horas en las cuales la mayoría de la población está regresando de sus trabajos y por lo tanto hay una mayor actividad tanto en las calles, como en los restaurantes y el transporte, haciendo de estas 4 horas la oportunidad perfecta para llevar a cabo robos. </p>
+                      <p class="card-text"> Tambien podemos resaltar que durante las horas de madrugada a pesar de que podriamos pensar que al tratarse de un horario nocturno ocurririan mas delitos no es asi la tendencia si no que esteo transcurren en horarios diurnos nomalmente.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 pb-4 d-flex">
+                <div class="card" >
+                    <img class="card-img-top " src="images/ResultadosHoras.png" alt="Imagen Crimenes segun horas">
+                </div>
+            </div>
+        </div>
+
+        <div class="row  "> <!-- formado por x filas que contienen grupos de 3 destinos los cuales se muestran usando el formato card ubicados dentro de columnas -->
+            
+            <div class="col-md-6 pb-4 d-flex">
+                <div class="card" >
+                    <img class="card-img-top " src="images/Crimenesporcalle.png" alt="Imagen Crimenes segun calles">
+                </div>
+            </div>
+            <div class="col-md-6 pb-4 d-flex">
+                <div class="card" >
+                  <div class="card-header CabeceraCarta">
+                    <h5>Analisis calles con mas delitos por distrito</h5>
+                  </div>
+                    <div class="card-body">
+                      <p class="card-text"> En este gráfico se presenta la calle con la mayor incidencia delictiva en cada uno de los distritos de la ciudad de Chicago. Se observa que ciertas calles se extienden a lo largo de varios distritos y presentan un elevado índice de criminalidad. Esto se debe a que estas vías coinciden con algunas de las principales arterias de la ciudad.</p>
+                      <p class="card-text"> Podemos observar esta tendencia en calles como la State Street, la principal arteria de la ciudad de Chicago, Esta concentración de crímenes se relaciona directamente con la importancia y extensión de estas vías, que actúan como puntos críticos en la estadística delictiva de la ciudad. La State Street, famosa por su vitalidad comercial y cultural, alberga lugares emblemáticos como el Teatro Chicago, la Universidad DePaul y el Millennium Park, convirtiéndose así en un área de interés tanto para residentes como para visitantes, pero también requiriendo especial atención en términos de seguridad.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row  "> <!-- formado por x filas que contienen grupos de 3 destinos los cuales se muestran usando el formato card ubicados dentro de columnas -->
+            <div class="col-md-7 pb-4 d-flex">
+                <div class="card" >
+                  <div class="card-header CabeceraCarta">
+                    <h5>Analisis de las calles las cuales han sido atendidas por más de una comisaría</h5>
+                  </div>
+                    <div class="card-body">
+                      <p class="card-text"> Se puede apreciar que hay varias calles las cuales han sido atendidas por más de una comisaría. Si tratamos de comprender la razón de que haya calles reptidas podemos ver lo siguiente: Centrandonos en las calles que aprecen en más una ocasión:</p>
+                      <p class="card-text"> Madison Street, una extensa vía que conecta el Este y Oeste de Chicago, alberga destacados puntos de interés como el United Center (para baloncesto y hockey), el Millennium Park con el Pabellón Jay Pritzker, el imponente Chase Tower de 60 pisos con oficinas de empresas prominentes, y el Civic Opera House, la principal ópera de la ciudad, entre otros edificios comerciales y residenciales.</p>
+                      <p class="card-text"> O'Hare Street destaca como la ubicación del Aeropuerto Internacional de Chicago O'Hare, uno de los más transitados del mundo, con millones de pasajeros nacionales e internacionales en 2022. Este importante punto de tránsito contribuye significativamente a la actividad de la ciudad.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5 pb-4 d-flex">
+                <div class="card" >
+                    <img class="card-img-top " src="images/comisarias.png" alt="Imagen Crimenes segun horas">
+                </div>
+            </div>
+        </div>
+
+
+
+   </section>
+
+   <footer> <!--Contenedor encargado de almacenar el Footer donde aparecera la información general de la pagina  -->
+    <div class="container justify-content-center"> 
+      <div class="row fondocabecera letrasFooter"> <!-- Esta formado por una fila en la que se almacenan las 3 columnas con informacion general   --> 
+        <div class="col d-flex">
+            <ul class="list-unstyled"> 
+              <li><h6 >Legal</h6></li> 
+              <li><a href=#  target="_blank" class="text-decoration-none letrasFooter">Privacidad</a></li> 
+              <li><a href=#  target="_blank" class="text-decoration-none letrasFooter">Seguridad</a></li> 
+              <li><a href=#  target="_blank" class="text-decoration-none letrasFooter" >Cookies</a></li> 
+            </ul>
+        </div >
+        <div class="col d-flex">
+          <ul class="list-unstyled">
+            <li><h6 class="font-weight-bold">Sobre Nosotros</h6></li> 
+            <li><a href=#  target="_blank" class="text-decoration-none letrasFooter" >Guias de Viajes</a></li> 
+            <li><a href=#  target="_blank" class="text-decoration-none letrasFooter">Preguntas</a></li> 
+            <li><a href=#  target="_blank" class="text-decoration-none letrasFooter">Afiliados</a></li> 
+          </ul>
+          
+      </div>
+      <div class="col d-flex">
+        <ul class="list-unstyled">
+          <li><h6 class="font-weight-bold">Redes Sociales</h6></li> 
+          <li><a href=https://www.instagram.com  target="_blank" class="text-decoration-none letrasFooter">Instagram</a></li> 
+          <li><a href=https://www.facebook.com target="_blank" class="text-decoration-none letrasFooter">Facebook</a></li> 
+          <li><a href=https://twitter.com target="_blank" class="text-decoration-none letrasFooter">Twitter</a></li> 
+        </ul>
+        </div>
+        </div>
+      </div>
+   </footer>
+
+</body>
+</html>
