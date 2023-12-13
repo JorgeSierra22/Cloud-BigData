@@ -63,11 +63,15 @@ Siguiendo estos pasos, conseguimos poder ejecutar Spark en modo local
 
 -[listOfStreets.py](https://github.com/JorgeSierra22/Cloud-BigData/blob/main/code/listOfStreet.py) : Gracias a este programa podemos ver las calles que han sido atendidas por cada comisaría durante el periodo de tiempo del estudio.
 
+-[most_problematic_street_for_district.py](https://github.com/JorgeSierra22/Cloud-BigData/blob/main/code/most_problematic_street_for_district.py): Este código es añade información extra al script anterior [listOfStreets.py](https://github.com/JorgeSierra22/Cloud-BigData/blob/main/code/listOfStreet.py) y nos muestra la calle que más ha sido atendida por cada comisaría en todos los años del estudio.
+
 -[typeOfCrime.py](https://github.com/JorgeSierra22/Cloud-BigData/blob/main/code/typeOfCrime.py) : Con este código, vemos cuántos crímenes de cada tipo se han producido en los años del estudio.
+
+-[typeOfCrime5.py](https://github.com/JorgeSierra22/Cloud-BigData/blob/main/code/typeOfCrimes5.py): Se trata de una profundización del codigo [typeOfCrime.py](https://github.com/JorgeSierra22/Cloud-BigData/blob/main/code/typeOfCrime.py) en donde en vez de mostrar el tipo de crimen asociado a su año, estos salen agrupados en franjas de 5 años((2001, 2006), (2007, 2012), (2013, 2018), (2019, 2023)) para poder ver mejor la evolución de las tendencias criminales en Chicago.
 
 -[crimesEachYearOnDistrict.py](https://github.com/JorgeSierra22/Cloud-BigData/blob/main/code/crimesEachYearOnDistrict.py): Llevamos a cabo la cuenta del número de delitos que han sido atendidos por cada comisaría en cada año.
 
--[most_problematic_street_for_district.py](https://github.com/JorgeSierra22/Cloud-BigData/blob/main/code/most_problematic_street_for_district.py): Este código es complementario al script anterior y nos muestra la calle que más ha sido atendida por cada comisaría en todos los años del estudio.
+-[maxCrimeEachYearOnADistrict.py](https://github.com/JorgeSierra22/Cloud-BigData/blob/main/code/maxCrimeEachYearOnADistrict.py): Este script nos enseña el máximo número de delitos realizados en cada año del estudio y se complementa con el código [crimesEachYearOnDistrict.py](https://github.com/JorgeSierra22/Cloud-BigData/blob/main/code/crimesEachYearOnDistrict.py).
 
 -[crimesWithArrest](https://github.com/JorgeSierra22/Cloud-BigData/blob/main/code/crimesWithArrest.py): Por medio de este script, podemos ver los crímenes en los cuales la policía de Chicago arrestó al delincuente, este código está relacionado con el script de [typeOfCrime.py](https://github.com/JorgeSierra22/Cloud-BigData/blob/main/code/typeOfCrime.py) que ya hemos explicado anteriormente.
 
