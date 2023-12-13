@@ -8,7 +8,7 @@ sc = SparkContext(conf=conf)
 sc.setLogLevel('ERROR')
 spark = SparkSession(sc)
 
-# Reemplaza 'Crimes_-_2001_to_Present.csv' con la ruta real de tu archivo de datos de crímenes
+
 crime_df = spark.read.option("header", "true").csv("Crimes_-_2001_to_Present.csv")
 
 # Divide el campo 'Block' por espacios y selecciona los elementos 2 y 3
@@ -29,5 +29,3 @@ street_list_by_district_df = filtered_df.groupBy("District").agg(
 # Escribe los resultados en un archivo CSV
 street_list_by_district_df.write.csv("street_list_by_district")
 
-# Detén la sesión de Spark
-spark.stop()

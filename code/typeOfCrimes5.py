@@ -1,29 +1,33 @@
 from pyspark import SparkConf, SparkContext
 from pyspark.sql import SparkSession
-from pyspark.sql import functions as F
+from pyspark.sql.functions import col, when
 
+# Configuración de Spark
 conf = SparkConf().setAppName('CrimeSummary')
 sc = SparkContext(conf=conf)
 sc.setLogLevel('ERROR')
 spark = SparkSession(sc)
 
-# Reemplaza 'your_crime_data.csv' con la ruta real de tu archivo de datos de crímenes
 crime_df = spark.read.option("header", "true").csv("Crimes_-_2001_to_Present.csv")
 
 # Selecciona las columnas relevantes, en este caso, 'Year' y 'Primary Type'
 df = crime_df.select("Year", "Primary Type")
 
-# Agrupa por 'Primary Type' y un nuevo campo 'Year_Group' que representa el rango de 5 años
-df = df.withColumn('Year_Group', ((df['Year'] - 1) / 5).cast('int') * 5 + 1)
+# Define los límites de los intervalos
+intervals = [(2001, 2006), (2007, 2012), (2013, 2018), (2019, 2023)]
 
-# Cuenta la frecuencia de crímenes por tipo y rango de 5 años
-crime_counts_df = df.groupBy("Primary Type", "Year_Group").count()
+# Añade una columna 'Interval' que indica a qué intervalo pertenece cada año
+df = df.withColumn("Interval", when((col("Year") >= intervals[0][0]) & (col("Year") <= intervals[0][1]), "2001-2006")
+                              .when((col("Year") >= intervals[1][0]) & (col("Year") <= intervals[1][1]), "2007-2012")
+                              .when((col("Year") >= intervals[2][0]) & (col("Year") <= intervals[2][1]), "2013-2018")
+                              .when((col("Year") >= intervals[3][0]) & (col("Year") <= intervals[3][1]), "2019-2023")
+                              .otherwise("Unknown"))
 
-# Encuentra el delito más repetido en cada rango de 5 años
-most_repeated_crime_df = crime_counts_df.groupBy("Year_Group").agg(
-    F.max("count").alias("Max_Count"),
-    F.first("Primary Type").alias("Most_Repeated_Crime")
-)
+# Filtra y cuenta la frecuencia de crímenes por intervalo
+crime_counts_df = df.groupBy("Primary Type", "Interval").count()
 
-# Escribe los resultados en un archivo CSV
-most_repeated_crime_df.write.csv("most_repeated_crime_per_5_year")
+# Escribe los resultados en archivos CSV separados para cada intervalo
+for interval in set(df.select("Interval").rdd.flatMap(lambda x: x).collect()):
+    interval_df = crime_counts_df.filter(col("Interval") == interval)
+    interval_df.write.csv(f"most_repeated_crime_{interval}")
+

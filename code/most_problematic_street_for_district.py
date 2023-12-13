@@ -8,7 +8,6 @@ sc = SparkContext(conf=conf)
 sc.setLogLevel('ERROR')
 spark = SparkSession(sc)
 
-# Reemplaza 'Crimes_-_2001_to_Present.csv' con la ruta real de tu archivo de datos de crímenes
 crime_df = spark.read.option("header", "true").csv("Crimes_-_2001_to_Present.csv")
 
 # Divide el campo 'Block' por espacios y selecciona los elementos 2 y 3
@@ -33,5 +32,3 @@ most_frequent_street_by_district_df = street_count_by_district_df.orderBy("Stree
 # Escribe los resultados en un archivo CSV
 most_frequent_street_by_district_df.write.csv("most_frequent_street_by_district")
 
-# Detén la sesión de Spark
-spark.stop()

@@ -8,7 +8,6 @@ sc = SparkContext(conf=conf)
 sc.setLogLevel('ERROR')
 spark = SparkSession(sc)
 
-# Reemplaza 'your_crime_data.csv' con la ruta real de tu archivo de datos de crímenes
 crime_df = spark.read.option("header", "true").csv("Crimes_-_2001_to_Present.csv")
 
 # Selecciona las columnas relevantes, en este caso, 'Year' y 'District'
