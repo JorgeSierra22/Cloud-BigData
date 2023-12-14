@@ -22,7 +22,7 @@
     </header>
     <nav class="container justify-content-center"> <!-- Contenedor encargado de almacenar la barra de Herramientas -->
         
-        <div class="row barraDeHerramientas"> <!-- formado por 1 fila que contiene los 4 botones de opciones, el buscador y el boton de Buscar -->
+        <div class="row barraDeHerramientas"> <!-- formado por 1 fila que contiene los 4 botones para moverte por la pagina -->
             <div class="col-md-3  text-center bordecolumnaCabecera"><a href=./index.html  target="_self" class="btn btn-lg botoncabecera" ><h5>Descripcion del Proyecto</h5></a></div> 
             <div class="col-md-3  text-center bordecolumnaCabecera"><a href=./Resultados.html  target="_self" class="btn btn-lg botoncabecera" ><h5>Resultados del Proyecto</h5></a></div> 
             <div class="col-md-2  text-center bordecolumnaCabecera"><a href=https://es.wikipedia.org/wiki/Am%C3%A9rica  target="_self" class="btn btn-lg botoncabecera" ><h5>Aspectos tecnicos</h5></a></div> 
@@ -31,10 +31,18 @@
     </nav>
 
 
-   <section class="container justify-content-center "> <!-- Contenedor encargado de almacenar la seccion donde apareceran los destinos disponibles -->
+   <section class="container justify-content-center "> 
 
-        <div class="row  "> <!-- formado por x filas que contienen grupos de 3 destinos los cuales se muestran usando el formato card ubicados dentro de columnas -->
-            <div class="col-md-8 pb-4 d-flex">
+      <div class="row mb-3">
+        <div class="card">
+          <div class="card-header CabeceraCarta text-center">
+            <h2>Analisis Horario</h2>
+          </div>
+        </div>
+      </div>
+
+        <div class="row  "> 
+          <div class="col-md-8 pb-4 d-flex">
                 <div class="card" >
                   <div class="card-header CabeceraCarta">
                     <h5>Analisis de la delictividad en funcion de las horas</h5>
@@ -52,7 +60,15 @@
             </div>
         </div>
 
-        <div class="row  "> <!-- formado por x filas que contienen grupos de 3 destinos los cuales se muestran usando el formato card ubicados dentro de columnas -->
+        <div class="row mb-3">
+          <div class="card">
+            <div class="card-header CabeceraCarta text-center">
+              <h2>Analisis Geográfico</h2>
+            </div>
+          </div>
+        </div>
+
+        <div class="row  "> 
             
             <div class="col-md-6 pb-4 d-flex">
                 <div class="card" >
@@ -72,7 +88,7 @@
             </div>
         </div>
 
-        <div class="row  "> <!-- formado por x filas que contienen grupos de 3 destinos los cuales se muestran usando el formato card ubicados dentro de columnas -->
+        <div class="row  "> 
             <div class="col-md-7 pb-4 d-flex">
                 <div class="card" >
                   <div class="card-header CabeceraCarta">
@@ -91,8 +107,86 @@
                 </div>
             </div>
         </div>
+        
+        <div class="row  "> 
+            
+          <div class="col-md-6 pb-4 d-flex">
+              <div class="card" >
+                  <img class="card-img-top " src="images/distritoconmas crimenes por año.png" alt="Imagen Crimenes segun calles">
+              </div>
+          </div>
+          <div class="col-md-6 pb-4 d-flex">
+              <div class="card" >
+                <div class="card-header CabeceraCarta">
+                  <h5>Analisis del distrito con mas crimenes de forma anual</h5>
+                </div>
+                  <div class="card-body">
+                    <p class="card-text"> En este grafico de dispersion se muestra representada la tabla de la derecha representando segun el posicionamiento el año y la cantidad de crimenes y segun el color los diferentes distritos</p>
+                    <p class="card-text"> Al examinar de manera general la evolución de las tasas de criminalidad a lo largo del tiempo, se destaca inicialmente una tendencia a la disminución de los índices delictivos. No obstante, al profundizar en el análisis por distritos, se revelan patrones notables. En el período comprendido entre 2002 y 2012, el distrito 8 emerge como el área con mayor incidencia delictiva. Sin embargo, entre los años 2013 y 2021, se observa un cambio significativo, con el distrito 11 asumiendo el lamentable título de la zona más peligrosa. Curiosamente, durante los últimos dos años de la serie temporal analizada, el distrito 8 resurge como un foco preocupante de actividad delictiva, generando una dinámica de alternancia en la peligrosidad relativa entre estos dos distritos. </p>
+                  </div>
+              </div>
+          </div>
+      </div>
 
+      <div class="row mb-3">
+        <div class="card">
+          <div class="card-header CabeceraCarta text-center">
+            <h2>Media Anual Por Distritos</h2>
+          </div>
+        </div>
+      </div>
 
+      <div class="row  "> 
+            
+        <div class="col-md-4 pb-4 d-flex">
+            <div class="card" >
+                <img class="card-img-top " src="images/mediaanualdistritos.png" alt="Imagen Crimenes segun calles">
+            </div>
+        </div>
+        <div class="col-md-4 pb-4 d-flex">
+            <div class="card" >
+              <div class="card-header CabeceraCarta text-center">
+                <h5>  <-- Media delitos todos los años   </h5>
+                <h5> Media delitos años de pandemia -->    </h5>
+              </div>
+                <div class="card-body">
+                  <p class="card-text"> En estos graficos se muestra la media de crimenes acontecidos en cada distritos de forma anual, encontrando a la izquierda analizados los datos representativos de estos ultimos 23 años, mientras que a la derecha observamos los del año 2020 representativos del año de pandemia </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 pb-4 d-flex">
+          <div class="card" >
+              <img class="card-img-top " src="images/mediaanualpandemia.png" alt="Imagen Crimenes segun calles">
+          </div>
+      </div>
+    </div>
+    <div class="row mb-3">
+      <div class="card">
+        <div class="card-header CabeceraCarta text-center">
+          <h2>Analisis Sobre Los Crimenes </h2>
+        </div>
+      </div>
+    </div>
+    <div class="row  "> 
+      <div class="col-md-4 pb-4 d-flex">
+          <div class="card" >
+            <div class="card-header CabeceraCarta">
+              <h5>Top 5 crimenes mas cometidos durante los ultimos 23 años </h5>
+            </div>
+              <div class="card-body">
+                <p class="card-text"> En el presente gráfico, se exhiben los crímenes más recurrentes de cada año tras aplicar un filtro para identificar los cinco delitos con mayor incidencia. Una tendencia clara revela que delitos de menor gravedad, como robos y estacionar en doble fila, se mantienen como los más prevalentes a lo largo de los años analizados. Posteriormente, se destacan delitos vinculados con narcóticos o daños, seguidos, con una representación ligeramente menor, por ofensas, robos residenciales y asaltos. </p>
+                <p class="card-text">  Este panorama también refleja la tendencia a la baja en la criminalidad que hemos observado a lo largo de las dos últimas décadas, ahora manifestada específicamente en los delitos más comunes durante los últimos 23 años. Este análisis permite no solo identificar las categorías delictivas más recurrentes, sino también apreciar la evolución positiva en términos de seguridad ciudadana a lo largo del tiempo. </p>
+                 </div>
+          </div>
+      </div>
+      <div class="col-md-8 pb-4 d-flex">
+          <div class="card" >
+              <img class="card-img-top " src="images/top5crimes.png" alt="Imagen Crimenes segun horas">
+          </div>
+      </div>
+  </div>
+
+      
 
    </section>
 
