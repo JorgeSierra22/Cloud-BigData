@@ -18,8 +18,6 @@ Este enfoque meticuloso en la identificación y selección de datos confiables y
 
 En nuestro Github se pueden encontrar en la carpeta [datsets](https://github.com/JorgeSierra22/Cloud-BigData/tree/main/datasets)
 
-## Necesidad del Big Data
-Para llevar a cabo el estudio de los datos explicados anteriormente, es necesario emplear Big Data. Esto se debe a que los datos de crímenes en la ciudad de Chicago a lo largo de estos años, desde 2001 hasta la actualidad, representan  una gran cantidad de información de muy diverso tipo(Volumen y Variedad). Además, queremos llevar a cabo un análisis con el mayor rendimiento posible(Velocidad). También realizamos el proyecto con la idea de poder realizar este mismo análisis en otras ciudades(Escalabilidad). Por todo esto, reiteramos la importancia de emplear las técnicas de Big Data aprendidas en clase para poder realizar un análisis y una comprensión correcta.
 
 ## Código
 Para nuestro trabajo, hemos decidido realizar script de Spark en el lenguaje de python. Todos los códigos se encuentran en la carpeta [code](https://github.com/JorgeSierra22/Cloud-BigData/tree/main/code)
