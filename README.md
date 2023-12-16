@@ -59,9 +59,12 @@ Siguiendo estos pasos, conseguimos poder ejecutar Spark en modo local
 **Ejecutar nuestros Scripts en el Cloud**:
 
 1º Debemos crear un clúster de Dataproc desde Cloud Shell: ```gcloud dataproc clusters create example-cluster --region europe-west6 --master-boot-disk-size 50GB --worker-boot-disk-size 50GB --enable-component-gateway```
+
 2º Creamos un bucket y añadrimos los archivos correspondientes. El archivo Python a ejecutar y el csv Crimes_-_2001_to_Present.
+
 3º Enviar un trabajo de Spark desde Cloud Console: ```BUCKET=gs://$GOOGLE_CLOUD_PROJECT```
 ```gcloud dataproc jobs submit pyspark --cluster example-cluster --region=europe-west6 $BUCKET/typeOfCrimes_Cloud.py -- $BUCKET/Crimes_-_2001_to_Present.csv $BUCKET/most_repeated_crime```.
+
 4º  Enviar un trabajo de Spark desde Cloud Shell. Envíe un trabajo con los siguientes comandos desde Cloud Shell: ```BUCKET=gs://$GOOGLE_CLOUD_PROJECT```
 ```gcloud dataproc jobs submit pyspark --cluster example-cluster --region=europe-west6 $BUCKET/typeOfCrimes_Cloud.py -- $BUCKET/Crimes_-_2001_to_Present.csv $BUCKET/most_repeated_crime2```.
 
