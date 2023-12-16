@@ -26,7 +26,7 @@ Para nuestro trabajo, hemos decidido realizar script de Spark en el lenguaje de 
 Para poder ejecutar nuestros códigos en **local** se deben de realizar los siguientes pasos:
 
 **Instalar el entorno**:
-Primero nos debemos de asegurar que tenemos un sistema operativo que soporte Unix, ya sea el propio Linux, wsl en Windows, o  Mac OS. 
+Primero nos debemos de asegurar que tenemos un sistema operativo que soporte Unix, ya sea el propio Linux, wsl en Windows, o  Mac OS. Además debemos de asegurarnos que el entorno tenga instalado Python. 
 
 Una vez nos encontremos en la terminal de dicho sistema operativo:
 
@@ -46,7 +46,7 @@ source ~/.profile
 Siguiendo estos pasos, conseguimos poder ejecutar Spark en modo local
 
 
-**Ejecutar nuestros Scripts**:
+**Ejecutar nuestros Scripts en local**:
 
 1º Debemos de descargar el dataset. Para ello, nos vamos a la carpeta [datsets](https://github.com/JorgeSierra22/Cloud-BigData/tree/main/datasets) y seguimos los pasos de información importante.
 
@@ -54,7 +54,16 @@ Siguiendo estos pasos, conseguimos poder ejecutar Spark en modo local
 
 3º Asegurándonos que tenemos el código y el dataset en la misma carpeta y además nosotros nos encontramos en dicha ruta, poniendo el siguiente comando en la terminal ```spark-submit example.py```, se procesa el script deseado.
 
-4º Para ver los resultados se habrá creado una carpeta nueva en dicha ruta que se podrá visualizar poniendo el siguiente comando: ```more ouput_example/*```. Sin embargo, todos estos resultados se encuentran visibles en la carpeta results
+4º Para ver los resultados se habrá creado una carpeta nueva en dicha ruta que se podrá visualizar poniendo el siguiente comando: ```more ouput_example/*```. Sin embargo, todos estos resultados se encuentran visibles en la carpeta results.
+
+**Ejecutar nuestros Scripts en el Cloud**:
+
+1º Debemos crear un clúster de Dataproc desde Cloud Shell: ´´´gcloud dataproc clusters create example-cluster --region europe-west6 --master-boot-disk-size 50GB --worker-boot-disk-size 50GB --enable-component-gateway´´´
+2º Creamos un bucket y añadrimos los archivos correspondientes. El archivo Python a ejecutar y el csv Crimes_-_2001_to_Present.
+3º Enviar un trabajo de Spark desde Cloud Console: ´´´ BUCKET=gs://$GOOGLE_CLOUD_PROJECT´´´
+´´´gcloud dataproc jobs submit pyspark --cluster example-cluster --region=europe-west6 $BUCKET/typeOfCrimes_Cloud.py -- $BUCKET/Crimes_-_2001_to_Present.csv $BUCKET/most_repeated_crime´´´.
+4º  Enviar un trabajo de Spark desde Cloud Shell. Envíe un trabajo con los siguientes comandos desde Cloud Shell: ´´´ BUCKET=gs://$GOOGLE_CLOUD_PROJECT´´´ 
+´´´gcloud dataproc jobs submit pyspark --cluster example-cluster --region=europe-west6 $BUCKET/typeOfCrimes_Cloud.py -- $BUCKET/Crimes_-_2001_to_Present.csv $BUCKET/most_repeated_crime2´´´.
 
 ### Explicación código
 -[hours.py](https://github.com/JorgeSierra22/Cloud-BigData/blob/main/code/hours.py) : A través de este programa realizamos una agrupación de los delitos cometidos por cada franja horaria durante todo el tiempo del estudio.
@@ -65,7 +74,7 @@ Siguiendo estos pasos, conseguimos poder ejecutar Spark en modo local
 
 -[typeOfCrime.py](https://github.com/JorgeSierra22/Cloud-BigData/blob/main/code/typeOfCrime.py) : Con este código, vemos cuántos crímenes de cada tipo se han producido en los años del estudio.
 
--[typeOfCrime5.py](https://github.com/JorgeSierra22/Cloud-BigData/blob/main/code/typeOfCrimes5.py): Se trata de una profundización del codigo [typeOfCrime.py](https://github.com/JorgeSierra22/Cloud-BigData/blob/main/code/typeOfCrime.py) en donde en vez de mostrar el tipo de crimen asociado a su año, estos salen agrupados en franjas de 5 años((2001, 2006), (2007, 2012), (2013, 2018), (2019, 2023)) para poder ver mejor la evolución de las tendencias criminales en Chicago.
+-[typeOfCrime5.py](https://github.com/JorgeSierra22/Cloud-BigData/blob/main/code/typeOfCrimes5.py): Se trata de una profundización del codigo [typeOfCrime.py](https://github.com/JorgeSierra22/Cloud-BigData/blob/main/code/typeOfCrime.py) en donde en vez de mostrar el tipo de crimen asociado a su año, estos salen agrupados en franjas de 5 años((2001, 2006), (2007, 2012), (2013, 2018), (2019, 2023)) para poder ver mejor la evolución de las tendencias criminales en Chicago. Hemos ejecutado este código en Cloud cambiando el input de Crimes_-_2001_to_Present.csv por argv[1] y en vez de output_dir = "most_repeated_crime" poner output_dir = sys.argv[2].
 
 -[crimesEachYearOnDistrict.py](https://github.com/JorgeSierra22/Cloud-BigData/blob/main/code/crimesEachYearOnDistrict.py): Llevamos a cabo la cuenta del número de delitos que han sido atendidos por cada comisaría en cada año.
 
