@@ -1,3 +1,5 @@
+#BUCKET=gs://$GOOGLE_CLOUD_PROJECT
+#gcloud dataproc jobs submit pyspark --cluster example-cluster --region=europe-west6 $BUCKET/typeOfCrimes5.1.py -- $BUCKET/Crimes_-_2001_to_Present.csv $BUCKET/most_repeated_crime
 from pyspark import SparkConf, SparkContext
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import col, when
@@ -10,7 +12,7 @@ sc = SparkContext(conf=conf)
 sc.setLogLevel('ERROR')
 spark = SparkSession(sc)
 
-crime_df = spark.read.option("header", "true").csv("Crimes_-_2001_to_Present.csv")
+crime_df = spark.read.option("header", "true").csv(sys.argv[1])
 
 # Selecciona las columnas relevantes, en este caso, 'Year' y 'Primary Type'
 df = crime_df.select("Year", "Primary Type")
@@ -29,14 +31,13 @@ df = df.withColumn("Interval", when((col("Year") >= intervals[0][0]) & (col("Yea
 crime_counts_df = df.groupBy("Primary Type", "Interval").count()
 
 # Directorio de resultados
-output_dir = "most_repeated_crime"
+output_dir = sys.argv[2] #"most_repeated_crime"
 
 # Crea el directorio si no existe
 if not os.path.exists(output_dir):
     os.makedirs(output_dir)
 
-# Escribe los resultados en archivos CSV separados para cada intervalo
+# Escribe los resultados en archivos CSV separados para cada intervalo dentro del directorio 'resultados'
 for interval in set(df.select("Interval").rdd.flatMap(lambda x: x).collect()):
     interval_df = crime_counts_df.filter(col("Interval") == interval)
     interval_df.write.csv(os.path.join(output_dir, f"most_repeated_crime_{interval}"))
-
