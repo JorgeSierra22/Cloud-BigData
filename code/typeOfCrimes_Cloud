@@ -1,0 +1,2 @@
+BUCKET=gs://$GOOGLE_CLOUD_PROJECT
+gcloud dataproc jobs submit pyspark --cluster example-cluster --region=europe-west6 $BUCKET/typeOfCrimes5.1.py -- $BUCKET/Crimes_-_2001_to_Present.csv $BUCKET/most_repeated_crime
