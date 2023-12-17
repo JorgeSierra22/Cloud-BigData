@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/estilosAspectosTecnicos.css">
+    <link rel="stylesheet" href="./css/estilosAspectosTecnicos.css">
     <link rel="shortcut icon" href="images/logo.png">
     <title>CrimesOfChicago</title>
 </head>
@@ -18,7 +18,10 @@
             <div class="col-sm-8 ">
                 <h1 class="textoCabecera d-flex align-items-center justify-content-center ">Crimes Of Chicago</h1>
             </div>
-            <div class="col-sm-2">
+            <div class="col-sm-1">
+              <h6 class="letrasFooter  align-items-center justify-content-center "> Enlace al repositorio -------></h6>
+            </div>
+            <div class="col-sm-1">
               <a href="https://github.com/JorgeSierra22/Cloud-BigData.git"><img src="images/GitHub-logo.png" alt="Icono Página no cargado" width="50" height="60"
                 class="d-flex align-content-center justify-content-center">
               </a>
@@ -26,11 +29,11 @@
         </div>
     </header>
     <nav class="container justify-content-center"> <!-- Contenedor encargado de almacenar la barra de Herramientas -->
-      <div class="row barraDeHerramientas"> <!-- formado por 1 fila que contiene los 4 botones de opciones, el buscador y el boton de Buscar -->
+      <div class="row barraDeHerramientas"> <!-- formado por 1 fila que contiene los 4 botones para moverte por la pagina -->
         <div class="col-md-3  text-center bordecolumnaCabecera"><a href=./index.html  target="_self" class="btn btn-lg botoncabecera" ><h5>Descripcion del Proyecto</h5></a></div> 
-        <div class="col-md-3  text-center bordecolumnaCabecera"><a href=./Resultados.html  target="_self" class="btn btn-lg botoncabecera" ><h5>Resultados del Proyecto</h5></a></div> 
-        <div class="col-md-2  text-center bordecolumnaCabecera"><a href=./Aspectostecnicos.html  target="_self" class="btn btn-lg botoncabecera" ><h5>Aspectos tecnicos</h5></a></div> 
-        <div class="col-md-4  text-center bordecolumnaCabecera"><a href=./Conclusiones.html  target="_self" class="btn btn-lg botoncabecera" ><h5>Objetivos Aprendizaje y Mejoras</h5></a></div> 
+        <div class="col-md-3  text-center bordecolumnaCabecera"><a href=./resultados.html  target="_self" class="btn btn-lg botoncabecera" ><h5>Resultados del Proyecto</h5></a></div> 
+        <div class="col-md-3  text-center bordecolumnaCabecera"><a href=./aspectosTecnicos.html   target="_self" class="btn btn-lg botoncabecera" ><h5>Aspectos tecnicos y Rendimiento</h5></a></div> 
+        <div class="col-md-3  text-center bordecolumnaCabecera"><a href=./conclusiones.html  target="_self" class="btn btn-lg botoncabecera" ><h5>Objetivos Aprendizaje y Mejoras</h5></a></div> 
     </div>
   </nav>
 
@@ -61,68 +64,85 @@
         <div class="row mb-3">
           <div class="card">
             <div class="card-header CabeceraCarta text-center">
+              <h2>Como ejecutar el código </h2>
+            </div>
+          </div>
+        </div>
+
+        <div class="row  "> <!-- formado por x filas que contienen grupos de 3 destinos los cuales se muestran usando el formato card ubicados dentro de columnas -->
+          <div class="col-md-12 pb-4 d-flex">
+              <div class="card" >
+                <div class="card-header CabeceraCarta">
+                  <h5>Como ejecutar los codigos</h5>
+                </div>
+                  <div class="card-body">
+                    <p>Si queremos visualizar como ejecutar los codigos y la informacion relevante de los scripts se la proporcionamos en el ReadMe del repositorio github. Pueden acceder a traves del siguiente boton </p>
+                    <a href="https://github.com/JorgeSierra22/Cloud-BigData/blob/main/README.md"  target="_blank" class="btn botonsabermas">Accede al ReadMe</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+
+
+        <div class="row mb-3">
+          <div class="card">
+            <div class="card-header CabeceraCarta text-center">
               <h2>Analisis de la eficiencia </h2>
             </div>
           </div>
         </div>
 
-        <div class="row  "> 
-          <div class="col-md-6 pb-4 d-flex">
-            <div class="card" >
-          <div id="carousel2" class="carousel slide" data-bs-ride="carousel">
-            <!-- Indicadores -->
-            <!-- Indicadores -->
-          <ol class="carousel-indicators">
-            <li data-bs-target="#carousel1" data-bs-slide-to="0" class="active"></li>
-             <li data-bs-target="#carousel1" data-bs-slide-to="1"></li>
-          </ol>
-      
-            <!-- Contenido del carrusel -->
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img class="d-block w-100" src="./images/graficocloud.png" alt="Imagen eficiencias cloud">
-                <div class="carousel-caption d-none d-md-block">
-                  <p class="fondoGrisTexto"></p>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <img class="d-block w-100" src="./images/graficolocal.png" alt="Imagen eficiencia big data">
-                <div class="carousel-caption d-none d-md-block">
-                  <p class = "fondoGrisTexto"></p>
-                </div>
-              </div>
-      
-              <!-- Agrega más elementos carousel-item según sea necesario -->
-            </div>
-          
-            <!-- Controles del carrusel -->
-            <a class="carousel-control-prev" href="#carousel2" role="button" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only"></span>
-            </a>
-            <a class="carousel-control-next" href="#carousel2" role="button" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only"></span>
-            </a>
-          </div>
-              </div>
-            </div>
-          <div class="col-md-6 pb-4 d-flex">
+        <div class="row  "> <!-- formado por x filas que contienen grupos de 3 destinos los cuales se muestran usando el formato card ubicados dentro de columnas -->
+          <div class="col-md-12 pb-4 d-flex">
               <div class="card" >
                 <div class="card-header CabeceraCarta">
-                  <h5>Analisis tecnico de la eficiencia</h5>
+                  <h5>Análisis del rendimiento</h5>
                 </div>
                   <div class="card-body">
-                    <p class="card-text"> A la izquierda pordemos ver un carrusel que incluye tanto el grafico que muestra la eficiencia en local como en el cloud indicando tanto el numero de cores y nodos y luego mostrando el tiempo de ejecucion de los algoritmos en si mismo </p>              
-                    <p class="card-text"> Llegamos a la conclusion de que en el grafico que hace referencia a los datos obtenidos en local si que llegamos a apreciar  una mejora signoficativa en funcion del numero de nodos siendo esta de un 93% de mejora al pasar de un nodo a 4. mientras que en los resultados obtenidos de las ejecuciones en el cloud no obtenemos una mejora significativa de hecho vemos que hay casos en los que aunque realicemos un aumneto de las caracteristicas obtenemos peores tiempos de ejecución</p>              
+                    <p class="card-text">La métrica usada para analizar el rendimiento será el tiempo real de ejecución de cada script, es decir, el tiempo tarda Spark desde que ejecutamos SparkSumit Example.py hasta que este construye los csvs como resultado. El script que hemos seleccionado para llevar a cabo las pruebas de rendimiento es TypeofCrime5.py, acompañandolo del comando time, ejecutandolo desde distintas maquinas tanto en modo local como en la nube y distintos hilos, workers y ejecutores para poder comprobar la diferencia de tiempo. <br/> Los resultados obtenidos han sido los siguientes: </p>
                   </div>
               </div>
           </div>
-          
-          </div>
+      </div>
 
+        <div class="row  "> 
          
+          <div class="col-md-6 pb-4 d-flex">
+              <div class="card" >
+                <div class="card-header CabeceraCarta">
+                  <h5>Analisis de la eficiencia en local</h5>
+                </div>
+                  <div class="card-body">
+                    <p class="card-text"> Calculos del incremento de velocidad en local (T secuencial/T paralelo) <br/> Aumento= 83.8 / 48.4 = 1.73 </p>
+                    <p class="card-text"> Como podemos ver la mejora producida vendria a ser de un 73% cuando ejecutamos el programa con 8 nodos en lugar de cuando ejecutamos este con 1 <br/>
+                    Llegando asi a la conclusion de que aun que el uso de procesamiento paralelo mejor en gran medidad los tiempos de ejecución este no es igual de eficiente como pensamos que los seria en el papel al no obtener fraciones del tiempo en funcion del numero de nosdos si no mejoras que no dotan de este caracter exponencial</p>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-6 pb-4 d-flex">
+            <div class="card" >
+                <img class="card-img-top " src="images/graficolocal.png" alt="Imagen Crimenes segun horas">
+            </div>
+        </div>
 
+        <div class="col-md-6 pb-4 d-flex">
+          <div class="card" >
+            <div class="card-header CabeceraCarta">
+              <h5>Analisis de la eficiencia en el Cloud</h5>
+            </div>
+              <div class="card-body">
+                <p class="card-text">Con el analisis en el cloud observamos que los datos son bastantes dispares pues estos no muestran una secuencia de reduccion como si pasa con las ejecuciones en local, al contrario de lo que pueda ser considerado nomal en algunos casos el aumento de los recursos empleados ha supuesto un aumento en los costes de eficiencia con respecto a ejecuciones pasadas <br/> <br/> Si comparasemos directamente la primera ejecución realizada con 1 ejecutor y un core con la ultima y con mejores resultados que fue la realizada con 4 ejecutores y 4 cores obtenemos este aumento en la velocidad de ejecución</p>
+                <p class="card-text"> Calculos del incremento de velocidad en Cloud (T secuencial/T paralelo) <br/> Aumento= 72.9 / 56.8 = 1.28 </p>
+              </div>
+          </div>
+      </div>
+      <div class="col-md-6 pb-4 d-flex">
+        <div class="card" >
+            <img class="card-img-top " src="images/graficocloud.png" alt="Imagen Crimenes segun horas">
+        </div>
+    </div>
+          </div>
 
    </section>
 
@@ -140,20 +160,13 @@
         <div class="col d-flex">
           <ul class="list-unstyled">
             <li><h6 class="font-weight-bold">Sobre Nosotros</h6></li> 
-            <li><a href=#  target="_blank" class="text-decoration-none letrasFooter" >Guias de Viajes</a></li> 
-            <li><a href=#  target="_blank" class="text-decoration-none letrasFooter">Preguntas</a></li> 
-            <li><a href=#  target="_blank" class="text-decoration-none letrasFooter">Afiliados</a></li> 
+            <li><a href=https://github.com/Marcosgr994  target="_blank" class="text-decoration-none letrasFooter">Marcos Gago Rivas</a></li> 
+            <li><a href=https://github.com/JorgeSierra22  target="_blank" class="text-decoration-none letrasFooter">Jorge Sierra Alonso</a></li> 
+            <li><a href=https://github.com/PabloCG13  target="_blank" class="text-decoration-none letrasFooter">Pablo Agustín Chicharro Gómez
+            </a></li> 
           </ul>
           
       </div>
-      <div class="col d-flex">
-        <ul class="list-unstyled">
-          <li><h6 class="font-weight-bold">Redes Sociales</h6></li> 
-          <li><a href=https://www.instagram.com  target="_blank" class="text-decoration-none letrasFooter">Instagram</a></li> 
-          <li><a href=https://www.facebook.com target="_blank" class="text-decoration-none letrasFooter">Facebook</a></li> 
-          <li><a href=https://twitter.com target="_blank" class="text-decoration-none letrasFooter">Twitter</a></li> 
-        </ul>
-        </div>
         </div>
       </div>
    </footer>
